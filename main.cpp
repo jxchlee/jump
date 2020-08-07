@@ -2,10 +2,23 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-long long fac(int n){
-  if(n == 1 || n == 0) return 1;
-  return n * fac(n-1);
+void swap(int  &n1, int  &n2){
+  
+  int z = n1;
+  n1 = n2;
+  n2 = z;
+  
 }
+
+long long fac1(int n1, int n2){
+  if(n1 == 0) return 1;
+  if(n1>n2){
+  swap(n1, n2);
+  }
+  return n2* fac1(n1 - 1,n2 - 1);
+}
+
+
 
 
 long long solution(int n) {
@@ -16,7 +29,7 @@ long long solution(int n) {
   for(two=0; 2*two<=n; two++){
     one = n - 2 * two;
     printf("%d %d\n", one, two);
-    tem = (fac(one + two) / (fac(one) * fac(two))) % 1234567;
+//    tem = (fac1(one, two) / (fac(one) * fac(two))) % 1234567;
     printf("%d\n", tem);
   }
 
