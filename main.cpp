@@ -24,7 +24,7 @@ long long fac2(int n1, int n2){
   swap(n1, n2);
   }
   if(n1 == 0) return 1;
-  printf("%d %d", n1, n2);
+  printf("%d %d\n", n1, n2);
   return n1 * fac2(n1 - 1, n2);
 }
 
@@ -50,7 +50,7 @@ long long solution(int n) {
 int main(){
 
   int n = 10;
-  fac2(100, 5);
+  fac2(0, 155);
   //solution(n);
   return 0;
 }
