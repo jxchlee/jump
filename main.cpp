@@ -11,19 +11,18 @@ void swap(int  &n1, int  &n2){
 }
 
 long long fac1(int n1, int n2){
-  if(n1 == 0) return 1;
   if(n1>n2){
   swap(n1, n2);
   }
-  return n2* fac1(n1 - 1,n2 - 1);
+  if(n1 == 0) return 1;
+  return (n2+n1) / n1 * fac1(n1 - 1,n2 - 1);
 }
 
 long long fac2(int n1, int n2){
-  
-  if(n1 == 0) return 1;
   if(n1>n2){
   swap(n1, n2);
   }
+  if(n1 == 0) return 1;
   return n1 * fac2(n1 - 1, n2);
 }
 
