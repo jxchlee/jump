@@ -16,8 +16,10 @@ long long fac1(int n1, int n2){
   }
   if(n1 == 0) return 1;
   printf("%d %d\n", n1, n2);
-  return (n2+n1) / n1 * fac1(n1 - 1,n2 - 1);
+  return (n2+n1) * fac1(n1 - 1, n2);
 }
+
+
 /*
 long long solution(int n) {
   long long answer = 0;
@@ -39,7 +41,7 @@ long long solution(int n) {
 int main(){
 
   int n = 4;
-  fac1(3, 4);
+  printf("%lld\n", fac1(3, 4));
   //solution(n);
   return 0;
 }
