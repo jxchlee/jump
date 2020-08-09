@@ -9,7 +9,7 @@ long long fac(int n){
   return t[n] = (fac(n-1) + fac(n-2)) % 1234567;
 }
 */
-
+/*
 long long fac(int n){
   if(n < 2) return 1;
   int i;
@@ -20,14 +20,24 @@ long long fac(int n){
     a = z;
   }
   return b;
-}
+}*/
 
+long long fac(int n){
+  long long a[n+1];
+  if(n < 2) return 1;
+  a[1] = 1;
+  a[0] = 1;
+  int i;
+  for(i=2; i<=n; i++){
+  a[i] = (a[i-1] + a[i-2]) % 1234567;
+  }
+  return a[n];
+}
 long long solution(int n) {
   long long answer = 0;
 
-//  long long tem;
+
   answer = fac(n);
-  
   //answer %= 1234567;
   printf("%lld\n", answer);
   return answer;
